@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const portNumber = 3005;
+const portNumber = process.env.PORT || 3005;
 const Sequelize = require('sequelize');
 const { User, Image } = require('./models');
 const bcrypt = require("bcrypt");
@@ -13,7 +13,7 @@ const cors = require('cors');
 // const router = express.Router();
 const stripe = require("./routes/stripe");
 
-// require("dotenv").config();
+require("dotenv").config();
 
 // const stripe = require("stripe")('sk_test_51MUzWnIjSsW1EbdCOC8QhKvLXATlB3o9ntw3FvRVzQxhnH7gcNf9LvOtAeROgIDCZjvnNkzR3tB8vJsPzF8HSLqi00y08kMoUS');
 // const stripe = Stripe("pk_test_51MUzWnIjSsW1EbdChzqmbIkmXuTVmYifBCay1MHo1uEK2FsoL3C29V17Mizvi9qNNq9b9tJ8hlxaySYYYehCPR1c000Jc7bwyr")
