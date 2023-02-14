@@ -100,7 +100,11 @@ function checkAuth(req, res, next){
 // app.listen(3000, () => console.log('Running on port 3000'));
 
 app.listen(portNumber, function(req, res){
-    console.log(`Listening on port ${portNumber}`)
+    console.log(`Listening on port http://localhost:${portNumber}`)
+})
+
+app.get("/", async function(req, res){
+    res.redirect("/api/signup")
 })
 
 app.post("/create-checkout-session", async function(req, res){
